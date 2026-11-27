@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>November 24 • Counting Down to Nanu</title>
+    <title>Khosla Family Birthday Countdown</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Cormorant Garamond, Playfair Display & Plus Jakarta Sans -->
@@ -118,98 +118,81 @@
     <!-- Main Container -->
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
 
+        <!-- Family Switcher Pill Bar -->
+        <nav aria-label="Family Members" class="flex flex-wrap items-center justify-center gap-2 sm:gap-2.5 mb-8">
+            <span class="text-xs font-semibold uppercase tracking-widest text-plumLight mr-1">Khosla Family:</span>
+            <div id="familySwitcher" class="flex flex-wrap items-center justify-center gap-2"></div>
+        </nav>
+
         <!-- Header / Hero Section -->
         <header class="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blush border border-gold/30 text-xs sm:text-sm font-medium tracking-widest uppercase text-plumLight mb-5 shadow-sm">
-                <span>Delhi</span>
+            <div class="inline-flex flex-wrap items-center justify-center gap-2 px-4 py-1.5 rounded-full bg-blush border border-gold/30 text-xs sm:text-sm font-medium tracking-widest uppercase text-plumLight mb-5 shadow-sm">
+                <span id="heroBirthCityBadge">New Delhi</span>
                 <span class="text-gold">✦</span>
-                <span>24th of November</span>
+                <span id="heroDateBadge">21st of January</span>
                 <span class="text-gold">✦</span>
-                <span>Amsterdam</span>
+                <span id="heroHomeCityBadge">Amsterdam</span>
             </div>
 
-            <!-- Customizable Recipient Title -->
-            <div class="group relative inline-block">
+            <!-- Dynamic Recipient Title -->
+            <div class="relative inline-block">
                 <h1 id="heroTitle" class="font-serif text-4xl sm:text-5xl md:text-6xl font-bold text-plum tracking-tight leading-tight">
-                    Happy Birthday, <span id="wifeNameDisplay" class="italic text-terracotta underline decoration-gold/40 decoration-2 underline-offset-8">Nanu</span>
+                    Counting Down to <span id="personNameDisplay" class="italic text-terracotta underline decoration-gold/40 decoration-2 underline-offset-8">Geet Khosla</span>
                 </h1>
                 
-                <!-- Inline Edit Button -->
-                <button 
-                    id="editNameBtn"
-                    type="button"
-                    title="Personalize with her name"
-                    class="mt-3 inline-flex items-center gap-1.5 text-xs font-medium text-plumLight/80 hover:text-plum bg-white/70 hover:bg-white px-3 py-1.5 rounded-full border border-gold/25 shadow-sm transition-all cursor-pointer"
-                >
-                    <svg class="w-3.5 h-3.5 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15.232 5.232l3.536 3.536m-2.036-5.036a2.5 2.5 0 113.536 3.536L6.5 21.036H3v-3.572L16.732 3.732z"/>
-                    </svg>
-                    <span>Personalize her name</span>
-                </button>
-            </div>
-
-            <!-- Inline Name Input Bar (Hidden by default) -->
-            <div id="nameEditContainer" class="hidden mt-4 max-w-sm mx-auto">
-                <div class="flex items-center gap-2 bg-white p-1.5 rounded-full border border-gold/40 shadow-md">
-                    <input 
-                        type="text" 
-                        id="wifeNameInput" 
-                        placeholder="Enter her name..." 
-                        maxlength="32"
-                        class="w-full px-4 py-1.5 text-sm text-plum bg-transparent focus:outline-none"
-                    >
-                    <button 
-                        id="saveNameBtn"
-                        type="button"
-                        class="px-4 py-1.5 rounded-full bg-plum text-cream text-xs font-semibold hover:bg-plum/90 transition-colors cursor-pointer"
-                    >
-                        Save
-                    </button>
+                <!-- Milestone Age & Relationship Pill -->
+                <div class="mt-4 flex flex-wrap items-center justify-center gap-2">
+                    <span id="relationshipBadge" class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-plum bg-white/85 px-3.5 py-1.5 rounded-full border border-gold/30 shadow-sm">
+                        Brother
+                    </span>
+                    <span id="turningAgeBadge" class="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-wider text-terracotta bg-blush px-3.5 py-1.5 rounded-full border border-gold/30 shadow-sm">
+                        Turning 39
+                    </span>
                 </div>
             </div>
 
-            <p class="mt-5 font-editorial text-xl sm:text-2xl text-plumLight leading-relaxed">
-                From the morning you entered the world in Delhi at <span class="font-semibold text-plum">05:40 AM</span> to our home today in Amsterdam—every second brings us closer to celebrating you.
+            <p id="heroSubtitle" class="mt-5 font-editorial text-xl sm:text-2xl text-plumLight leading-relaxed">
+                From the morning you entered the world in New Delhi at <span class="font-semibold text-plum">09:00 AM</span> to our celebrations in Amsterdam—every second brings us closer to your big day.
             </p>
 
             <!-- Live Clocks Pill -->
             <div class="mt-6 flex flex-wrap items-center justify-center gap-3 sm:gap-6 text-xs sm:text-sm text-plumLight">
                 <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-2xl border border-gold/20 shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-gold animate-pulse"></span>
-                    <span class="font-medium">New Delhi (IST):</span>
-                    <span id="liveDelhiClock" class="font-semibold text-plum tabular-nums">--:--:--</span>
+                    <span id="liveBirthCityLabel" class="font-medium">New Delhi (IST):</span>
+                    <span id="liveBirthClock" class="font-semibold text-plum tabular-nums">--:--:--</span>
                 </div>
                 <div class="flex items-center gap-2 bg-white/80 px-4 py-2 rounded-2xl border border-gold/20 shadow-sm">
                     <span class="w-2 h-2 rounded-full bg-terracotta animate-pulse"></span>
-                    <span class="font-medium">Amsterdam (CET):</span>
-                    <span id="liveAmsterdamClock" class="font-semibold text-plum tabular-nums">--:--:--</span>
+                    <span id="liveHomeCityLabel" class="font-medium">Amsterdam (CET):</span>
+                    <span id="liveHomeClock" class="font-semibold text-plum tabular-nums">--:--:--</span>
                 </div>
             </div>
         </header>
 
         <!-- Countdown Timers Section -->
-        <section aria-label="Birthday Countdown Timers" class="mb-16 sm:mb-24">
+        <section aria-label="Birthday Countdown Timers" class="mb-16 sm:mb-20">
             <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 items-stretch">
 
-                <!-- TIMER 1: 00:00 Delhi Time on Nov 24 -->
+                <!-- TIMER 1: 00:00 Birth City Time -->
                 <article class="bg-cardBg rounded-3xl p-6 sm:p-8 border border-gold/25 shadow-[0_12px_35px_-12px_rgba(61,30,38,0.12)] flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
                     <div>
                         <div class="flex items-center justify-between gap-2 mb-4">
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blush text-plum text-xs font-semibold tracking-wide">
+                            <span id="card1CityTag" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blush text-plum text-xs font-semibold tracking-wide">
                                 🇮🇳 New Delhi • IST
                             </span>
                             <span class="text-xs font-medium text-gold uppercase tracking-wider">Milestone 01</span>
                         </div>
-                        <h2 class="font-serif text-2xl font-bold text-plum mb-1">
-                            Birthday Begins in Delhi
+                        <h2 id="card1Title" class="font-serif text-2xl font-bold text-plum mb-1">
+                            Birthday Begins in New Delhi
                         </h2>
-                        <p class="text-sm text-plumLight mb-6">
-                            Midnight • 00:00 IST on November 24
+                        <p id="card1Subtitle" class="text-sm text-plumLight mb-6">
+                            Midnight • 00:00 IST on January 21
                         </p>
                     </div>
 
                     <!-- Timer 1 Digits -->
-                    <div id="timer-delhi-midnight" class="grid grid-cols-4 gap-2 sm:gap-3 text-center">
+                    <div id="timer-birth-midnight" class="grid grid-cols-4 gap-2 sm:gap-3 text-center">
                         <div class="bg-blush/70 rounded-2xl p-3 border border-gold/15">
                             <div class="days font-serif text-2xl sm:text-3xl font-bold text-plum tabular-nums">00</div>
                             <div class="text-[11px] uppercase tracking-wider text-plumLight font-medium mt-1">Days</div>
@@ -229,12 +212,12 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gold/15 flex items-center justify-between text-xs text-plumLight">
-                        <span>In Amsterdam time:</span>
-                        <span class="font-semibold text-plum">Nov 23 • 19:30 CET</span>
+                        <span id="card1AltLabel">In Amsterdam time:</span>
+                        <span id="card1AltTime" class="font-semibold text-plum">--</span>
                     </div>
                 </article>
 
-                <!-- TIMER 2 (FEATURED): 05:40 AM Delhi Time on Nov 24 -->
+                <!-- TIMER 2 (FEATURED): Exact Birth Moment -->
                 <article class="birth-moment-card rounded-3xl p-6 sm:p-8 text-cream flex flex-col justify-between relative overflow-hidden lg:-translate-y-3 transition-transform duration-300 hover:lg:-translate-y-4">
                     <!-- Subtle decorative corner glow -->
                     <div class="pointer-events-none absolute -top-16 -right-16 w-44 h-44 rounded-full bg-gold/20 blur-2xl"></div>
@@ -244,18 +227,18 @@
                             <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gold/25 border border-gold/40 text-goldLight text-xs font-semibold tracking-wide">
                                 ✨ Exact Birth Moment
                             </span>
-                            <span class="text-xs font-medium text-goldLight uppercase tracking-wider">05:40 AM IST</span>
+                            <span id="card2TimeTag" class="text-xs font-medium text-goldLight uppercase tracking-wider">09:00 AM IST</span>
                         </div>
                         <h2 class="font-serif text-2xl sm:text-3xl font-bold text-white mb-1">
                             The Moment You Were Born
                         </h2>
-                        <p class="text-sm text-blush/80 mb-6">
-                            05:40 AM Delhi Time • November 24
+                        <p id="card2Subtitle" class="text-sm text-blush/80 mb-6">
+                            09:00 AM New Delhi Time • January 21
                         </p>
                     </div>
 
                     <!-- Timer 2 Digits -->
-                    <div id="timer-delhi-birth" class="grid grid-cols-4 gap-2 sm:gap-3 text-center">
+                    <div id="timer-birth-moment" class="grid grid-cols-4 gap-2 sm:gap-3 text-center">
                         <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-gold/30">
                             <div class="days font-serif text-2xl sm:text-3xl font-bold text-white tabular-nums">00</div>
                             <div class="text-[11px] uppercase tracking-wider text-goldLight font-medium mt-1">Days</div>
@@ -275,30 +258,30 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-white/15 flex items-center justify-between text-xs text-blush/80">
-                        <span>In Amsterdam time:</span>
-                        <span class="font-semibold text-goldLight">Nov 24 • 01:10 AM CET</span>
+                        <span id="card2AltLabel">In Amsterdam time:</span>
+                        <span id="card2AltTime" class="font-semibold text-goldLight">--</span>
                     </div>
                 </article>
 
-                <!-- TIMER 3: 00:00 Amsterdam Time on Nov 24 -->
+                <!-- TIMER 3: 00:00 Home Time -->
                 <article class="bg-cardBg rounded-3xl p-6 sm:p-8 border border-gold/25 shadow-[0_12px_35px_-12px_rgba(61,30,38,0.12)] flex flex-col justify-between transition-transform duration-300 hover:-translate-y-1">
                     <div>
                         <div class="flex items-center justify-between gap-2 mb-4">
-                            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blush text-plum text-xs font-semibold tracking-wide">
+                            <span id="card3CityTag" class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blush text-plum text-xs font-semibold tracking-wide">
                                 🇳🇱 Amsterdam • CET
                             </span>
                             <span class="text-xs font-medium text-gold uppercase tracking-wider">Milestone 03</span>
                         </div>
-                        <h2 class="font-serif text-2xl font-bold text-plum mb-1">
+                        <h2 id="card3Title" class="font-serif text-2xl font-bold text-plum mb-1">
                             Birthday Begins at Home
                         </h2>
-                        <p class="text-sm text-plumLight mb-6">
-                            Midnight • 00:00 CET on November 24
+                        <p id="card3Subtitle" class="text-sm text-plumLight mb-6">
+                            Midnight • 00:00 CET on January 21
                         </p>
                     </div>
 
                     <!-- Timer 3 Digits -->
-                    <div id="timer-amsterdam-midnight" class="grid grid-cols-4 gap-2 sm:gap-3 text-center">
+                    <div id="timer-home-midnight" class="grid grid-cols-4 gap-2 sm:gap-3 text-center">
                         <div class="bg-blush/70 rounded-2xl p-3 border border-gold/15">
                             <div class="days font-serif text-2xl sm:text-3xl font-bold text-plum tabular-nums">00</div>
                             <div class="text-[11px] uppercase tracking-wider text-plumLight font-medium mt-1">Days</div>
@@ -318,8 +301,8 @@
                     </div>
 
                     <div class="mt-5 pt-4 border-t border-gold/15 flex items-center justify-between text-xs text-plumLight">
-                        <span>In New Delhi time:</span>
-                        <span class="font-semibold text-plum">Nov 24 • 04:30 AM IST</span>
+                        <span id="card3AltLabel">In New Delhi time:</span>
+                        <span id="card3AltTime" class="font-semibold text-plum">--</span>
                     </div>
                 </article>
 
@@ -338,91 +321,29 @@
             </div>
         </section>
 
-        <!-- Childhood Keepsake Gallery Section -->
-        <section aria-label="Childhood Memories" class="mb-16">
+        <!-- Dynamic Childhood Keepsake Gallery Section (Rendered only when active member has photos) -->
+        <section id="gallerySection" aria-label="Childhood Memories" class="hidden mb-16">
             <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
                 <span class="text-xs font-semibold uppercase tracking-[0.2em] text-gold">Little Moments, Big Love</span>
                 <h2 class="font-serif text-3xl sm:text-4xl font-bold text-plum mt-2">
                     Where Your Story Began
                 </h2>
-                <p class="font-editorial text-lg sm:text-xl text-plumLight mt-2">
-                    Three cherished snapshots from the early chapters of your life—tap any keepsake to view up close.
+                <p id="gallerySubtitle" class="font-editorial text-lg sm:text-xl text-plumLight mt-2">
+                    Cherished snapshots from the early chapters of your life—tap any keepsake to view up close.
                 </p>
             </div>
 
-            <!-- Three Polaroid Cards Grid -->
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-5xl mx-auto px-2 sm:px-0">
-
-                <!-- Photo 1: Family / Baby on lap -->
-                <div 
-                    class="polaroid-card rounded-2xl cursor-pointer md:-rotate-2 group"
-                    onclick="openLightbox('photo1.jpeg', 'Surrounded by Love • Early Days in Delhi')"
-                >
-                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-blush">
-                        <img 
-                            src="images/photo1.jpeg"
-                            alt="Childhood family photo" 
-                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                            onerror="this.src='https://placehold.co/600x800/F7EBE6/3D1E26?text=Childhood+Memory+1'"
-                        >
-                        <div class="absolute inset-0 bg-plum/0 group-hover:bg-plum/10 transition-colors duration-300"></div>
-                    </div>
-                    <div class="mt-4 text-center px-2">
-                        <p class="font-editorial italic text-xl text-plum font-semibold">Surrounded by Love</p>
-                        <p class="text-xs text-plumLight mt-0.5 tracking-wide">Early chapters & warm embraces</p>
-                    </div>
-                </div>
-
-                <!-- Photo 2: Stroller portrait -->
-                <div 
-                    class="polaroid-card rounded-2xl cursor-pointer md:translate-y-4 group"
-                    onclick="openLightbox('photo2.jpeg', 'Curious Eyes • Little Explorer')"
-                >
-                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-blush">
-                        <img 
-                            src="images/photo2.jpeg"
-                            alt="Baby sitting in stroller" 
-                            class="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                            onerror="this.src='https://placehold.co/600x800/F7EBE6/3D1E26?text=Childhood+Memory+2'"
-                        >
-                        <div class="absolute inset-0 bg-plum/0 group-hover:bg-plum/10 transition-colors duration-300"></div>
-                    </div>
-                    <div class="mt-4 text-center px-2">
-                        <p class="font-editorial italic text-xl text-plum font-semibold">Curious Little Soul</p>
-                        <p class="text-xs text-plumLight mt-0.5 tracking-wide">Ready to take on the world</p>
-                    </div>
-                </div>
-
-                <!-- Photo 3: Red and white dress with kala tika -->
-                <div 
-                    class="polaroid-card rounded-2xl cursor-pointer md:rotate-2 group"
-                    onclick="openLightbox('photo3.jpeg', 'Sweetest Smile • Forever Iconic')"
-                >
-                    <div class="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-blush">
-                        <img 
-                            src="images/photo3.jpeg"
-                            alt="Toddler in red and white dress smiling" 
-                            class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-                            onerror="this.src='https://placehold.co/600x800/F7EBE6/3D1E26?text=Childhood+Memory+3'"
-                        >
-                        <div class="absolute inset-0 bg-plum/0 group-hover:bg-plum/10 transition-colors duration-300"></div>
-                    </div>
-                    <div class="mt-4 text-center px-2">
-                        <p class="font-editorial italic text-xl text-plum font-semibold">That Unforgettable Smile</p>
-                        <p class="text-xs text-plumLight mt-0.5 tracking-wide">Stealing hearts since day one</p>
-                    </div>
-                </div>
-
-            </div>
+            <!-- Polaroid Cards Grid -->
+            <div id="galleryGrid" class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 max-w-5xl mx-auto px-2 sm:px-0"></div>
         </section>
 
         <!-- Love Note Footer -->
         <footer class="max-w-2xl mx-auto text-center pt-8 pb-6 border-t border-gold/25">
-            <p class="font-editorial italic text-2xl text-plum">
-                “Whether by Delhi time or Amsterdam time, every hour with you is my favorite.”
+            <p id="footerQuote" class="font-editorial italic text-2xl text-plum">
+                “Whether by New Delhi time or Amsterdam time, we can’t wait to celebrate you.”
             </p>
-            <p class="text-xs text-plumLight uppercase tracking-widest mt-3">
-                Made with love for November 24
+            <p id="footerDateTag" class="text-xs text-plumLight uppercase tracking-widest mt-3">
+                Khosla Family Countdown • January 21
             </p>
         </footer>
 
@@ -454,43 +375,94 @@
 
     <script>
         /**
-         * Helper to determine the target year for November 24.
-         * Targets November 24, 2026 by default; if all three milestones for 2026
-         * have passed by more than 24 hours, rolls forward to the next year.
+         * ============================================================================
+         * KHOSLA FAMILY BIRTHDAY CONFIGURATION
+         * ============================================================================
+         * Add new family members to this array anytime! The page automatically
+         * calculates everyone's next upcoming birthday (including a full 24-hour
+         * birthday celebration window on their actual birthday) and rotates to
+         * whichever family member is next on the calendar.
+         *
+         * Example template to copy & paste when adding another family member:
+         * {
+         *     id: "member-slug",
+         *     name: "Full Name",
+         *     nickname: "Short Name", // Optional: shown in switcher pill & hero if desired
+         *     relationship: "Mom / Dad / Sister",
+         *     birthYear: 1965,        // Used to calculate milestone age ("Turning XX")
+         *     month: 6,               // 1 = January ... 12 = December
+         *     day: 15,                // Day of month (1-31)
+         *     birthHour: 14,          // 24-hour format (0-23) in birthTimeZone
+         *     birthMinute: 30,        // Minute (0-59) in birthTimeZone
+         *     birthCity: "New Delhi",
+         *     birthFlag: "🇮🇳",
+         *     birthTimeZone: "Asia/Kolkata",
+         *     homeCity: "Amsterdam",
+         *     homeFlag: "🇳🇱",
+         *     homeTimeZone: "Europe/Amsterdam",
+         *     photos: [               // Leave [] if no photos yet; gallery auto-hides cleanly
+         *         { src: "images/example1.jpeg", caption: "Title", subcaption: "Subtitle" }
+         *     ]
+         * }
          */
-        function getTargetYear() {
-            const now = new Date();
-            const currentYear = now.getFullYear();
-            // End of Nov 24 in Amsterdam (latest of the three milestones is 01:10 CET on Nov 24,
-            // so we keep 2026 active through the end of Nov 24)
-            const endOfBirthdayThisYear = new Date(`${currentYear}-11-24T23:59:59+01:00`);
-            if (now > endOfBirthdayThisYear) {
-                return currentYear + 1;
-            }
-            return currentYear < 2026 ? 2026 : currentYear;
-        }
-
-        const targetYear = getTargetYear();
-
-        // Exact ISO timestamps with explicit timezone offsets:
-        // Delhi (IST) is UTC+05:30 year-round (no DST)
-        // Amsterdam (CET) on November 24 is UTC+01:00 (Standard Time)
-        const MILESTONES = [
+        const FAMILY_MEMBERS = [
             {
-                id: 'timer-delhi-midnight',
-                targetDate: new Date(`${targetYear}-11-24T00:00:00+05:30`),
-                celebrated: false
+                id: "geet-khosla",
+                name: "Geet Khosla",
+                relationship: "Brother",
+                birthYear: 1988,
+                month: 1, // January
+                day: 21,
+                birthHour: 9,
+                birthMinute: 0,
+                birthCity: "New Delhi",
+                birthFlag: "🇮🇳",
+                birthTimeZone: "Asia/Kolkata",
+                homeCity: "Amsterdam",
+                homeFlag: "🇳🇱",
+                homeTimeZone: "Europe/Amsterdam",
+                // Add photos to images/ (e.g., images/geet1.jpeg) and list them here anytime:
+                photos: []
             },
             {
-                id: 'timer-delhi-birth',
-                targetDate: new Date(`${targetYear}-11-24T05:40:00+05:30`),
-                celebrated: false
-            },
-            {
-                id: 'timer-amsterdam-midnight',
-                targetDate: new Date(`${targetYear}-11-24T00:00:00+01:00`),
-                celebrated: false
+                id: "nandita-khosla",
+                name: "Nandita Khosla",
+                nickname: "Nan",
+                relationship: "Wife",
+                birthYear: 1993,
+                month: 11, // November
+                day: 24,
+                birthHour: 5,
+                birthMinute: 40,
+                birthCity: "New Delhi",
+                birthFlag: "🇮🇳",
+                birthTimeZone: "Asia/Kolkata",
+                homeCity: "Amsterdam",
+                homeFlag: "🇳🇱",
+                homeTimeZone: "Europe/Amsterdam",
+                photos: [
+                    {
+                        src: "images/photo1.jpeg",
+                        caption: "Surrounded by Love",
+                        subcaption: "Early chapters & warm embraces"
+                    },
+                    {
+                        src: "images/photo2.jpeg",
+                        caption: "Curious Little Soul",
+                        subcaption: "Ready to take on the world"
+                    },
+                    {
+                        src: "images/photo3.jpeg",
+                        caption: "That Unforgettable Smile",
+                        subcaption: "Stealing hearts since day one"
+                    }
+                ]
             }
+        ];
+
+        const MONTH_NAMES = [
+            "January", "February", "March", "April", "May", "June",
+            "July", "August", "September", "October", "November", "December"
         ];
 
         /**
@@ -501,13 +473,359 @@
         }
 
         /**
-         * Update live reference clocks for New Delhi and Amsterdam
+         * Ordinal suffix helper (1 -> "1st", 21 -> "21st", 24 -> "24th")
+         */
+        function getOrdinal(n) {
+            const s = ["th", "st", "nd", "rd"];
+            const v = n % 100;
+            return n + (s[(v - 20) % 10] || s[v] || s[0]);
+        }
+
+        /**
+         * Convert a wall-clock date/time in any IANA timezone into an exact UTC Date object.
+         * Handles DST transitions automatically (e.g., Amsterdam CET UTC+1 vs CEST UTC+2).
+         */
+        function getZonedDateUTC(year, month, day, hour, minute, timeZone) {
+            const utcGuess = Date.UTC(year, month - 1, day, hour, minute, 0);
+            const formatter = new Intl.DateTimeFormat('en-US', {
+                timeZone,
+                year: 'numeric',
+                month: '2-digit',
+                day: '2-digit',
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: false
+            });
+
+            const parts = formatter.formatToParts(new Date(utcGuess));
+            const getPart = (type) => parseInt(parts.find(p => p.type === type).value, 10);
+            const zonedHour = getPart('hour') === 24 ? 0 : getPart('hour');
+
+            const zonedAsUTC = Date.UTC(
+                getPart('year'),
+                getPart('month') - 1,
+                getPart('day'),
+                zonedHour,
+                getPart('minute'),
+                getPart('second')
+            );
+
+            const offsetMs = zonedAsUTC - utcGuess;
+            return new Date(utcGuess - offsetMs);
+        }
+
+        /**
+         * Get short timezone abbreviation (e.g., "IST", "CET", "CEST") for a given date
+         */
+        function getTimeZoneShortName(date, timeZone) {
+            if (timeZone === 'Asia/Kolkata') return 'IST';
+            try {
+                const parts = new Intl.DateTimeFormat('en-GB', {
+                    timeZone,
+                    timeZoneName: 'short'
+                }).formatToParts(date);
+                const tzPart = parts.find(p => p.type === 'timeZoneName');
+                return tzPart ? tzPart.value : '';
+            } catch (e) {
+                return '';
+            }
+        }
+
+        /**
+         * Format an instant in a target timezone as "MMM DD • HH:MM TZ"
+         */
+        function formatInZone(date, timeZone) {
+            const dateStr = new Intl.DateTimeFormat('en-US', {
+                timeZone,
+                month: 'short',
+                day: 'numeric'
+            }).format(date);
+
+            const timeStr = new Intl.DateTimeFormat('en-GB', {
+                timeZone,
+                hour: '2-digit',
+                minute: '2-digit',
+                hour12: false
+            }).format(date);
+
+            const tzShort = getTimeZoneShortName(date, timeZone);
+            return `${dateStr} • ${timeStr} ${tzShort}`.trim();
+        }
+
+        /**
+         * Compute a family member's upcoming birthday year and exact milestone instants.
+         * Keeps the birthday active through the full 24 hours of their birthday in their
+         * home timezone before rotating to the following year.
+         */
+        function getMemberSchedule(member, now = new Date()) {
+            const currentYear = now.getFullYear();
+
+            const buildForYear = (yr) => {
+                const birthMidnight = getZonedDateUTC(yr, member.month, member.day, 0, 0, member.birthTimeZone);
+                const birthMoment = getZonedDateUTC(yr, member.month, member.day, member.birthHour, member.birthMinute, member.birthTimeZone);
+                const homeMidnight = getZonedDateUTC(yr, member.month, member.day, 0, 0, member.homeTimeZone);
+                const homeDayEnd = getZonedDateUTC(yr, member.month, member.day, 23, 59, member.homeTimeZone);
+                const latestMilestone = new Date(Math.max(birthMidnight, birthMoment, homeMidnight, homeDayEnd));
+
+                return {
+                    targetYear: yr,
+                    turningAge: member.birthYear ? yr - member.birthYear : null,
+                    birthMidnight,
+                    birthMoment,
+                    homeMidnight,
+                    latestMilestone
+                };
+            };
+
+            let schedule = buildForYear(currentYear);
+            if (now > schedule.latestMilestone) {
+                schedule = buildForYear(currentYear + 1);
+            }
+            return schedule;
+        }
+
+        /**
+         * Determine which family member's birthday is next on the calendar
+         */
+        function getNextUpMember(now = new Date()) {
+            let bestMember = FAMILY_MEMBERS[0];
+            let bestSchedule = getMemberSchedule(bestMember, now);
+
+            for (let i = 1; i < FAMILY_MEMBERS.length; i++) {
+                const candidate = FAMILY_MEMBERS[i];
+                const candidateSchedule = getMemberSchedule(candidate, now);
+                if (candidateSchedule.birthMidnight < bestSchedule.birthMidnight) {
+                    bestMember = candidate;
+                    bestSchedule = candidateSchedule;
+                }
+            }
+            return { member: bestMember, schedule: bestSchedule };
+        }
+
+        // Track active family member state
+        let nextUpInfo = getNextUpMember();
+        let activeMember = nextUpInfo.member;
+        let activeSchedule = nextUpInfo.schedule;
+        let celebratedMilestones = new Set();
+
+        /**
+         * Render the family switcher pill bar at the top
+         */
+        function renderFamilySwitcher() {
+            const container = document.getElementById('familySwitcher');
+            if (!container) return;
+
+            const now = new Date();
+            nextUpInfo = getNextUpMember(now);
+
+            container.innerHTML = FAMILY_MEMBERS.map((member) => {
+                const isSelected = member.id === activeMember.id;
+                const isUpNext = member.id === nextUpInfo.member.id;
+                const label = member.nickname ? `${member.name} (${member.nickname})` : member.name;
+                const shortDate = `${MONTH_NAMES[member.month - 1].slice(0, 3)} ${member.day}`;
+
+                const baseClasses = "inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all cursor-pointer border";
+                const stateClasses = isSelected
+                    ? "bg-plum text-cream border-plum shadow-md"
+                    : "bg-white/80 text-plum hover:bg-white border-gold/30 shadow-sm";
+
+                const upNextTag = isUpNext
+                    ? `<span class="px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${isSelected ? 'bg-gold text-plum' : 'bg-blush text-terracotta'}">Up Next</span>`
+                    : '';
+
+                return `
+                    <button type="button" onclick="selectFamilyMember('${member.id}')" class="${baseClasses} ${stateClasses}">
+                        <span>${label}</span>
+                        <span class="opacity-70 text-xs">• ${shortDate}</span>
+                        ${upNextTag}
+                    </button>
+                `;
+            }).join('');
+        }
+
+        /**
+         * Switch active family member and refresh all UI elements
+         */
+        function selectFamilyMember(memberId) {
+            const found = FAMILY_MEMBERS.find(m => m.id === memberId);
+            if (!found) return;
+
+            activeMember = found;
+            activeSchedule = getMemberSchedule(activeMember, new Date());
+            celebratedMilestones.clear();
+
+            renderFamilySwitcher();
+            renderMemberView();
+            updateLiveClocks();
+            updateCountdowns();
+        }
+
+        /**
+         * Reset a timer card's inner HTML to the 4-box digit layout
+         */
+        function resetTimerBoxes(containerId, isDarkCard) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            if (isDarkCard) {
+                container.className = 'grid grid-cols-4 gap-2 sm:gap-3 text-center';
+                container.innerHTML = `
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-gold/30">
+                        <div class="days font-serif text-2xl sm:text-3xl font-bold text-white tabular-nums">00</div>
+                        <div class="text-[11px] uppercase tracking-wider text-goldLight font-medium mt-1">Days</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-gold/30">
+                        <div class="hours font-serif text-2xl sm:text-3xl font-bold text-white tabular-nums">00</div>
+                        <div class="text-[11px] uppercase tracking-wider text-goldLight font-medium mt-1">Hours</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-gold/30">
+                        <div class="minutes font-serif text-2xl sm:text-3xl font-bold text-white tabular-nums">00</div>
+                        <div class="text-[11px] uppercase tracking-wider text-goldLight font-medium mt-1">Mins</div>
+                    </div>
+                    <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-3 border border-gold/30">
+                        <div class="seconds font-serif text-2xl sm:text-3xl font-bold text-goldLight tabular-nums">00</div>
+                        <div class="text-[11px] uppercase tracking-wider text-goldLight font-medium mt-1">Secs</div>
+                    </div>
+                `;
+            } else {
+                container.className = 'grid grid-cols-4 gap-2 sm:gap-3 text-center';
+                container.innerHTML = `
+                    <div class="bg-blush/70 rounded-2xl p-3 border border-gold/15">
+                        <div class="days font-serif text-2xl sm:text-3xl font-bold text-plum tabular-nums">00</div>
+                        <div class="text-[11px] uppercase tracking-wider text-plumLight font-medium mt-1">Days</div>
+                    </div>
+                    <div class="bg-blush/70 rounded-2xl p-3 border border-gold/15">
+                        <div class="hours font-serif text-2xl sm:text-3xl font-bold text-plum tabular-nums">00</div>
+                        <div class="text-[11px] uppercase tracking-wider text-plumLight font-medium mt-1">Hours</div>
+                    </div>
+                    <div class="bg-blush/70 rounded-2xl p-3 border border-gold/15">
+                        <div class="minutes font-serif text-2xl sm:text-3xl font-bold text-plum tabular-nums">00</div>
+                        <div class="text-[11px] uppercase tracking-wider text-plumLight font-medium mt-1">Mins</div>
+                    </div>
+                    <div class="bg-blush/70 rounded-2xl p-3 border border-gold/15">
+                        <div class="seconds font-serif text-2xl sm:text-3xl font-bold text-terracotta tabular-nums">00</div>
+                        <div class="text-[11px] uppercase tracking-wider text-plumLight font-medium mt-1">Secs</div>
+                    </div>
+                `;
+            }
+        }
+
+        /**
+         * Populate hero, milestone cards, and keepsake photo gallery for activeMember
+         */
+        function renderMemberView() {
+            const m = activeMember;
+            const s = activeSchedule;
+            const monthName = MONTH_NAMES[m.month - 1];
+            const ordinalDay = getOrdinal(m.day);
+            const birthTimeFormatted = `${padZero(m.birthHour)}:${padZero(m.birthMinute)}`;
+            const birthAmPm = m.birthHour >= 12 ? 'PM' : 'AM';
+            const displayHour12 = m.birthHour % 12 === 0 ? 12 : m.birthHour % 12;
+            const birthTime12Str = `${padZero(displayHour12)}:${padZero(m.birthMinute)} ${birthAmPm}`;
+
+            const birthTzShort = getTimeZoneShortName(s.birthMoment, m.birthTimeZone);
+            const homeTzShort = getTimeZoneShortName(s.homeMidnight, m.homeTimeZone);
+
+            // Header badges & title
+            document.title = `${m.name} • Khosla Family Birthday Countdown`;
+            document.getElementById('heroBirthCityBadge').textContent = m.birthCity;
+            document.getElementById('heroDateBadge').textContent = `${ordinalDay} of ${monthName}`;
+            document.getElementById('heroHomeCityBadge').textContent = m.homeCity;
+
+            document.getElementById('personNameDisplay').textContent = m.nickname ? `${m.name} (${m.nickname})` : m.name;
+            document.getElementById('relationshipBadge').textContent = m.relationship;
+
+            const turningAgeEl = document.getElementById('turningAgeBadge');
+            if (s.turningAge) {
+                turningAgeEl.textContent = `Turning ${s.turningAge} in ${s.targetYear}`;
+                turningAgeEl.classList.remove('hidden');
+            } else {
+                turningAgeEl.classList.add('hidden');
+            }
+
+            document.getElementById('heroSubtitle').innerHTML = `
+                From the morning you entered the world in ${m.birthCity} at <span class="font-semibold text-plum">${birthTime12Str}</span> to our celebrations in ${m.homeCity}—every second brings us closer to your big day.
+            `;
+
+            // Live clock labels
+            document.getElementById('liveBirthCityLabel').textContent = `${m.birthCity} (${birthTzShort}):`;
+            document.getElementById('liveHomeCityLabel').textContent = `${m.homeCity} (${homeTzShort}):`;
+
+            // Reset timer cards
+            resetTimerBoxes('timer-birth-midnight', false);
+            resetTimerBoxes('timer-birth-moment', true);
+            resetTimerBoxes('timer-home-midnight', false);
+
+            // Card 1: 00:00 Birth City Time
+            document.getElementById('card1CityTag').textContent = `${m.birthFlag} ${m.birthCity} • ${birthTzShort}`;
+            document.getElementById('card1Title').textContent = `Birthday Begins in ${m.birthCity}`;
+            document.getElementById('card1Subtitle').textContent = `Midnight • 00:00 ${birthTzShort} on ${monthName} ${m.day}`;
+            document.getElementById('card1AltLabel').textContent = `In ${m.homeCity} time:`;
+            document.getElementById('card1AltTime').textContent = formatInZone(s.birthMidnight, m.homeTimeZone);
+
+            // Card 2: Exact Birth Moment
+            document.getElementById('card2TimeTag').textContent = `${birthTimeFormatted} ${birthTzShort}`;
+            document.getElementById('card2Subtitle').textContent = `${birthTime12Str} ${m.birthCity} Time • ${monthName} ${m.day}`;
+            document.getElementById('card2AltLabel').textContent = `In ${m.homeCity} time:`;
+            document.getElementById('card2AltTime').textContent = formatInZone(s.birthMoment, m.homeTimeZone);
+
+            // Card 3: 00:00 Home Time
+            document.getElementById('card3CityTag').textContent = `${m.homeFlag} ${m.homeCity} • ${homeTzShort}`;
+            document.getElementById('card3Title').textContent = `Birthday Begins at Home`;
+            document.getElementById('card3Subtitle').textContent = `Midnight • 00:00 ${homeTzShort} on ${monthName} ${m.day}`;
+            document.getElementById('card3AltLabel').textContent = `In ${m.birthCity} time:`;
+            document.getElementById('card3AltTime').textContent = formatInZone(s.homeMidnight, m.birthTimeZone);
+
+            // Footer
+            document.getElementById('footerQuote').textContent = `“Whether by ${m.birthCity} time or ${m.homeCity} time, we can’t wait to celebrate you.”`;
+            document.getElementById('footerDateTag').textContent = `Khosla Family Countdown • ${monthName} ${m.day}`;
+
+            // Keepsake Gallery (only show if photos exist for activeMember)
+            const gallerySection = document.getElementById('gallerySection');
+            const galleryGrid = document.getElementById('galleryGrid');
+            const rotations = ['md:-rotate-2', 'md:translate-y-4', 'md:rotate-2'];
+
+            if (Array.isArray(m.photos) && m.photos.length > 0) {
+                gallerySection.classList.remove('hidden');
+                galleryGrid.innerHTML = m.photos.map((photo, idx) => {
+                    const tiltClass = rotations[idx % rotations.length];
+                    const safeCaption = (photo.caption || m.name).replace(/'/g, "\\'");
+                    return `
+                        <div 
+                            class="polaroid-card rounded-2xl cursor-pointer ${tiltClass} group"
+                            onclick="openLightbox('${photo.src}', '${safeCaption}')"
+                        >
+                            <div class="relative aspect-[3/4] w-full overflow-hidden rounded-xl bg-blush">
+                                <img 
+                                    src="${photo.src}" 
+                                    alt="${photo.caption || m.name}" 
+                                    class="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                                    onerror="this.src='https://placehold.co/600x800/F7EBE6/3D1E26?text=Childhood+Memory'"
+                                >
+                                <div class="absolute inset-0 bg-plum/0 group-hover:bg-plum/10 transition-colors duration-300"></div>
+                            </div>
+                            <div class="mt-4 text-center px-2">
+                                <p class="font-editorial italic text-xl text-plum font-semibold">${photo.caption || 'Cherished Memory'}</p>
+                                ${photo.subcaption ? `<p class="text-xs text-plumLight mt-0.5 tracking-wide">${photo.subcaption}</p>` : ''}
+                            </div>
+                        </div>
+                    `;
+                }).join('');
+            } else {
+                gallerySection.classList.add('hidden');
+                galleryGrid.innerHTML = '';
+            }
+        }
+
+        /**
+         * Update live reference clocks for active member's birth city and home city
          */
         function updateLiveClocks() {
             const now = new Date();
             try {
-                const delhiTime = new Intl.DateTimeFormat('en-GB', {
-                    timeZone: 'Asia/Kolkata',
+                const birthTime = new Intl.DateTimeFormat('en-GB', {
+                    timeZone: activeMember.birthTimeZone,
                     hour: '2-digit',
                     minute: '2-digit',
                     second: '2-digit',
@@ -515,8 +833,8 @@
                     month: 'short'
                 }).format(now);
 
-                const amsterdamTime = new Intl.DateTimeFormat('en-GB', {
-                    timeZone: 'Europe/Amsterdam',
+                const homeTime = new Intl.DateTimeFormat('en-GB', {
+                    timeZone: activeMember.homeTimeZone,
                     hour: '2-digit',
                     minute: '2-digit',
                     second: '2-digit',
@@ -524,33 +842,51 @@
                     month: 'short'
                 }).format(now);
 
-                document.getElementById('liveDelhiClock').textContent = delhiTime;
-                document.getElementById('liveAmsterdamClock').textContent = amsterdamTime;
+                document.getElementById('liveBirthClock').textContent = birthTime;
+                document.getElementById('liveHomeClock').textContent = homeTime;
             } catch (err) {
                 console.error('Clock formatting error:', err);
             }
         }
 
         /**
-         * Update all three countdown timers every second
+         * Update all three countdown timers every second and auto-rotate if a birthday ends
          */
         function updateCountdowns() {
             const now = new Date();
 
-            MILESTONES.forEach((milestone) => {
+            // Check if the current celebration window has completely ended; if so, auto-rotate!
+            if (now > activeSchedule.latestMilestone) {
+                nextUpInfo = getNextUpMember(now);
+                activeMember = nextUpInfo.member;
+                activeSchedule = nextUpInfo.schedule;
+                celebratedMilestones.clear();
+                renderFamilySwitcher();
+                renderMemberView();
+            }
+
+            const milestones = [
+                { id: 'timer-birth-midnight', targetDate: activeSchedule.birthMidnight, isDark: false },
+                { id: 'timer-birth-moment', targetDate: activeSchedule.birthMoment, isDark: true },
+                { id: 'timer-home-midnight', targetDate: activeSchedule.homeMidnight, isDark: false }
+            ];
+
+            milestones.forEach((milestone) => {
                 const container = document.getElementById(milestone.id);
                 if (!container) return;
 
                 const diffMs = milestone.targetDate.getTime() - now.getTime();
+                const milestoneKey = `${activeMember.id}-${milestone.id}`;
 
                 if (diffMs <= 0) {
-                    // Milestone reached! Show celebratory banner inside card
-                    if (!milestone.celebrated) {
-                        milestone.celebrated = true;
-                        container.className = 'rounded-2xl p-4 text-center bg-gold/20 border border-gold/40';
+                    if (!celebratedMilestones.has(milestoneKey)) {
+                        celebratedMilestones.add(milestoneKey);
+                        container.className = milestone.isDark
+                            ? 'rounded-2xl p-4 text-center bg-gold/25 border border-gold/50'
+                            : 'rounded-2xl p-4 text-center bg-gold/20 border border-gold/40';
                         container.innerHTML = `
-                            <div class="font-serif text-xl sm:text-2xl font-bold text-terracotta">
-                                Happy Birthday! 🎉
+                            <div class="font-serif text-xl sm:text-2xl font-bold ${milestone.isDark ? 'text-goldLight' : 'text-terracotta'}">
+                                Happy Birthday, ${activeMember.nickname || activeMember.name.split(' ')[0]}! 🎉
                             </div>
                             <div class="text-xs mt-1 opacity-90">
                                 This magical milestone is here!
@@ -618,52 +954,11 @@
             if (e.key === 'Escape') closeLightbox();
         });
 
-        /**
-         * Personalize Name Toggle & Persistence
-         */
-        const editNameBtn = document.getElementById('editNameBtn');
-        const nameEditContainer = document.getElementById('nameEditContainer');
-        const wifeNameInput = document.getElementById('wifeNameInput');
-        const saveNameBtn = document.getElementById('saveNameBtn');
-        const wifeNameDisplay = document.getElementById('wifeNameDisplay');
-
-        // Load saved name if previously entered
-        try {
-            const savedName = localStorage.getItem('wifeBirthdayName');
-            if (savedName && savedName.trim()) {
-                wifeNameDisplay.textContent = savedName.trim();
-                wifeNameInput.value = savedName.trim();
-            }
-        } catch (e) {
-            // Ignore storage restrictions
-        }
-
-        editNameBtn.addEventListener('click', () => {
-            nameEditContainer.classList.toggle('hidden');
-            if (!nameEditContainer.classList.contains('hidden')) {
-                wifeNameInput.focus();
-            }
-        });
-
-        function applyCustomName() {
-            const val = wifeNameInput.value.trim();
-            const finalName = val || 'Nanu';
-            wifeNameDisplay.textContent = finalName;
-            nameEditContainer.classList.add('hidden');
-            try {
-                localStorage.setItem('wifeBirthdayName', finalName);
-            } catch (e) {}
-            triggerSparkles();
-        }
-
-        saveNameBtn.addEventListener('click', applyCustomName);
-        wifeNameInput.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') applyCustomName();
-        });
-
         document.getElementById('celebrateBtn').addEventListener('click', triggerSparkles);
 
-        // Initialize clocks and timers immediately and tick every second
+        // Initialize family switcher, active view, clocks, and timers immediately
+        renderFamilySwitcher();
+        renderMemberView();
         updateLiveClocks();
         updateCountdowns();
         setInterval(() => {
